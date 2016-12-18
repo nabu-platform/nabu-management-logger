@@ -1,0 +1,24 @@
+[route=serverLog] {
+	padding: 20px 0px;
+	
+	.buttons {
+		padding-bottom: 10px;
+		text-align: center;
+	}
+	.log {
+		font-family: Monospace;
+		font-size: 9pt;
+		
+		.logged, .errorCode, .message {
+			margin: 10px 0px;
+		}
+		
+		.logged {
+			color: #aaa;
+			border: solid 1px #ccc;
+			border-style: none solid none none;
+			margin-right: 10px;
+			padding-right: 10px;
+		}
+	}
+}

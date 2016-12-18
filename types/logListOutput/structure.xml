@@ -1,0 +1,3 @@
+<structure name="root">
+    <structure collectionName="ServerLogs" definition="nabu.management.logger.types.model.logger.ServerLog" maxOccurs="unbounded" minOccurs="0" name="logs" namespace="nabu.management.logger.types.model.logger"/>
+</structure>

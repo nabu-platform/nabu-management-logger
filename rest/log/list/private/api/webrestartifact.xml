@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restInterface>
+    <method>GET</method>
+    <path>/log/{server}</path>
+    <queryParameters>until, fromId, toId</queryParameters>
+    <role>$user</role>
+    <permissionAction>logger.log.list</permissionAction>
+    <output>nabu.management.logger.types.logListOutput</output>
+    <configurationType>nabu.management.logger.configuration</configurationType>
+</restInterface>

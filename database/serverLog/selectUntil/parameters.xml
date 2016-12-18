@@ -1,0 +1,5 @@
+<structure name="parameter">
+    <field name="until" timezone="UTC" type="java.util.Date"/>
+    <field name="toId" type="java.lang.Long"/>
+    <field name="serverName" type="java.lang.String"/>
+</structure>

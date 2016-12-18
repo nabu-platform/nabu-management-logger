@@ -1,0 +1,3 @@
+<structure name="root">
+    <structure definition="nabu.management.logger.database.serverLog.selectServers.results" maxOccurs="unbounded" minOccurs="0" name="servers"/>
+</structure>

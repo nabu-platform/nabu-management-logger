@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restInterface>
+    <method>POST</method>
+    <path>/log</path>
+    <role>$user</role>
+    <permissionAction>logger.log.create</permissionAction>
+    <input>nabu.management.logger.types.loggerInput</input>
+    <configurationType>nabu.management.logger.configuration</configurationType>
+</restInterface>

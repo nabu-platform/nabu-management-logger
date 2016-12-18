@@ -1,0 +1,4 @@
+<structure name="parameter">
+    <field name="fromId" type="java.lang.Long"/>
+    <field name="serverName" type="java.lang.String"/>
+</structure>

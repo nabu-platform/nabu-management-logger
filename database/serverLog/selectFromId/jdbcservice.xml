@@ -1,0 +1,19 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.management.logger.types.model.logger.ServerLog</outputDefinition>
+	<sql>select
+	id,
+	created,
+	modified,
+	server_name,
+	server_group,
+	error_code,
+	logged,
+	description,
+	message,
+	severity,
+	context
+from server_logs
+where id &lt; :fromId
+and server_name = :serverName
+order by created desc</sql>
+</jdbcService>

@@ -1,0 +1,18 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="e898d737-6c8d-439b-8f6d-3c03db0cd79d" transactionVariable="transactionId">
+	<steps xsi:type="be.nabu.libs.services.vm.step.For" disabled="false" id="3e90d3d9-302f-45fb-9beb-f6708b519b03" variable="inputLog">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="b60932ff-ad0e-43b2-b7bd-356245f58927">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="becf3944-857b-403f-af0b-8493e27f0fae" serviceId="nabu.management.logger.providers.logger" resultName="result2d5ac9566f5644a1a586ea6605a6c1d4" invocationOrder="0" temporaryMapping="true" y="68" x="89">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="a0eb970d-99b4-4bb6-9616-0f4cd405aed1" mask="false" fixedValue="false" optional="false">
+					<from>inputLog</from>
+					<to>log</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="3bab3815-328d-425c-a4d5-20a7b6fc0407" mask="false" fixedValue="false" optional="false">
+					<from>input/configuration/connectionId</from>
+					<to>connectionId</to>
+				</steps>
+				<asynchronous>false</asynchronous>
+			</steps>
+		</steps>
+		<query>input/content/logs</query>
+	</steps>
+</sequence>

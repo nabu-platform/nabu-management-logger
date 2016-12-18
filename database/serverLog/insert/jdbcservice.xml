@@ -1,0 +1,27 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<inputDefinition>nabu.management.logger.types.model.logger.ServerLog</inputDefinition>
+	<sql>insert into server_logs (
+	created,
+	modified,
+	server_name,
+	server_group,
+	error_code,
+	logged,
+	description,
+	message,
+	severity,
+	context
+) values (
+	:created,
+	:modified,
+	:serverName,
+	:serverGroup,
+	:errorCode,
+	:logged,
+	:description,
+	:message,
+	:severity,
+	:context
+)</sql>
+	<generatedColumn>id</generatedColumn>
+</jdbcService>

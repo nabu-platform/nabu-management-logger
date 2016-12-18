@@ -1,0 +1,21 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="3f489be7-8d3f-471c-98a8-110ba7bfa760">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Map input" id="5dfc6adb-0799-4a16-89e0-a820ea86932d">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="5c956d7f-83e2-4094-a18d-5ae7c4754a38" mask="false" fixedValue="false" optional="false">
+			<from>input/configuration/connectionId</from>
+			<to>output/connectionId</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Get system properties" id="aecbfc26-1e1b-457d-a8ef-f814b9ea0dbb">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="0541729b-af09-4425-a8dc-23c408c090dc" serviceId="nabu.utils.Server.property" resultName="result316cbf931dc54ae0a20bc1382171a4f4" invocationOrder="0" temporaryMapping="true" y="60" x="60">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c61975d9-a86e-4449-8bd6-96b3420f236f" mask="false" fixedValue="true" optional="false">
+				<from>nabu.management.logger.providers.logger.connection</from>
+				<to>key</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="0cee0352-aca2-4ad4-9a12-2bf313c4066b" mask="false" fixedValue="false" optional="true">
+			<from>result316cbf931dc54ae0a20bc1382171a4f4/value</from>
+			<to>output/connectionId</to>
+		</steps>
+	</steps>
+</sequence>

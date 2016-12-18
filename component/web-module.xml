@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webModule>
+    <path>/api/logger</path>
+    <webFragments>nabu.management.logger.rest.log.create</webFragments>
+    <webFragments>nabu.management.logger.rest.log.list</webFragments>
+    <webFragments>nabu.management.logger.rest.server.list</webFragments>
+</webModule>
