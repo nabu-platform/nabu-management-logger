@@ -6,13 +6,19 @@ application.views.ServerLog = Vue.extend({
 			until: new Date(),
 			toId: null,
 			fromId: null,
-			logs: []
+			logs: [],
+			timeout: null
 		};
 	},
 	activate: function(done) {
 		this.loadUntil().then(function() {
 			done();
 		});
+	},
+	beforeDestroy: function() {
+		if (this.timeout) {
+			clearTimeout(this.timeout);
+		}
 	},
 	methods: {
 		loadUntil: function() {
@@ -45,7 +51,7 @@ application.views.ServerLog = Vue.extend({
 							self.$window.scrollTo(0, self.$document.body.scrollHeight);
 						}, 50);
 					}
-					setTimeout(function() {
+					self.timeout = setTimeout(function() {
 						self.until = new Date();
 						self.loadUntil();
 					}, 5000);

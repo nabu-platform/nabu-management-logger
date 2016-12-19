@@ -14,20 +14,23 @@ application.initialize.modules.push(function() {
 						groups[response.servers[i].serverGroup].push(response.servers[i].serverName);
 					}
 				}
+				var push = function(parameters) {
+					groupChildren.push({
+						title: groups[key][i],
+						handle: function() {
+							console.log("moving to", parameters);
+							application.services.router.route("serverLog", parameters);
+						}
+					});
+				};
 				var children = [];
 				for (var key in groups) {
 					var groupChildren = [];
 					for (var i = 0; i < groups[key].length; i++) {
-						var parameters = {
+						push({
 							group: key,
 							server: groups[key][i]
-						};
-						groupChildren.push({
-							title: groups[key][i],
-							handle: function() {
-								application.services.router.route("serverLog", parameters);
-							}
-						})
+						});
 					}
 					children.push({
 						title: key,
