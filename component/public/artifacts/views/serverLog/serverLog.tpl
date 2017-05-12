@@ -1,5 +1,5 @@
 <template id="serverLog">
-	<div>
+	<div class="serverLog">
 		<div class="buttons">
 			<button v-on:click="goBack">older</button>
 		</div>

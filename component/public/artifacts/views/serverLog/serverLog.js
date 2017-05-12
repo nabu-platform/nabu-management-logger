@@ -23,7 +23,6 @@ application.views.ServerLog = Vue.extend({
 	methods: {
 		loadUntil: function() {
 			var self = this;
-			console.log("SCROLL", self.$document.body.scrollHeight, self.$document.body.scrollTop, self.$document.body.scrollHeight - self.$document.body.scrollTop, self.$document.body.clientHeight);
 			return nabu.utils.ajax({
 				method: "get", 
 				url: "${server.root()}api/logger/log/" + self.server + "?until=" + self.until.toISOString() + (self.toId ? "&toId=" + self.toId : ""),

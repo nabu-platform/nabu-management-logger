@@ -1,4 +1,5 @@
-application.initialize.modules.push(function() {
+application.configuration.modules.push(function($services) {
+	var index = $services.manager.index();
 	nabu.utils.ajax({
 		method: "get",
 		url: "${server.root()}api/logger/server",
@@ -17,13 +18,12 @@ application.initialize.modules.push(function() {
 				var push = function(parameters) {
 					groupChildren.push({
 						title: groups[key][i],
-						handle: function() {
-							console.log("moving to", parameters);
+						handler: function() {
 							application.services.router.route("serverLog", parameters);
 						}
 					});
 				};
-				var children = [];
+				var actions = [];
 				for (var key in groups) {
 					var groupChildren = [];
 					for (var i = 0; i < groups[key].length; i++) {
@@ -32,17 +32,25 @@ application.initialize.modules.push(function() {
 							server: groups[key][i]
 						});
 					}
-					children.push({
+					actions.push({
 						title: key,
-						children: groupChildren
+						actions: groupChildren
 					});
 				}
-				application.services.vue.menu.push({
+				$services.manager.menu({
 					title: "Server Logs",
-					children: children
+					actions: actions,
+					index: index
 				});
 			}
 		}
 	});
-	
+	$services.router.register({
+		alias: "serverLog",
+		enter: function(parameters) {
+			console.log("PARAMS", parameters);
+			return new application.views.ServerLog({ data: parameters });
+		},
+		url: "/server/log/{group}/{server}"
+	});
 });
