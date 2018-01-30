@@ -1,0 +1,23 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="a26c70e2-b205-4237-a281-43ebcf38ded9">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="d46ee1f6-ac6b-47b5-a0b1-57b862c373dd">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="b8e26c87-27e2-42b1-ad91-ba267141244e" invocationOrder="0" temporaryMapping="true" serviceId="nabu.management.logger.services.remoteClient" resultName="result3b72d5d55d6346deba943b93f7961d4c" y="105" x="63">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="5ae616d8-46d6-4e83-9d69-865154cdae21" mask="false" fixedValue="false" optional="false">
+				<from>input/log</from>
+				<to>content/logs[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="9c2097ce-0e4d-4f0a-b66c-52e8ebc8350c" mask="false" fixedValue="false" optional="false">
+				<from>input/endpoint</from>
+				<to>endpoint</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="2a7fcc3a-caa9-4f7c-b37b-8326e0637c7c" mask="false" fixedValue="false" optional="false">
+				<from>input/password</from>
+				<to>authentication/password</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d9f5c4f8-b3d4-4701-8c82-d0375f7146cc" mask="false" fixedValue="false" optional="false">
+				<from>input/username</from>
+				<to>authentication/username</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+	</steps>
+</sequence>

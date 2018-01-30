@@ -6,19 +6,24 @@
 		text-align: center;
 	}
 	.log {
+		overflow: auto;
+		width: 100%;
 		font-family: Monospace;
 		font-size: 9pt;
 		
-		.logged, .errorCode, .message {
-			margin: 10px 0px;
+		.logged, .errorCode, .log-message {
+			margin: 1rem 0px;
 		}
 		
 		.logged {
-			color: #aaa;
+			color: #888;
 			border: solid 1px #ccc;
 			border-style: none solid none none;
 			margin-right: 10px;
-			padding-right: 10px;
+			padding: 0 1rem;
+		}
+		pre {
+			margin: 0;
 		}
 	}
 }

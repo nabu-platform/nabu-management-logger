@@ -1,12 +1,11 @@
 <structure interface="be.nabu.eai.repository.logger.ServiceLogger.log" name="pipeline">
-    <structure name="input">
-        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+    <structure name="input" validate="true">
+        <field name="connectionId" type="java.lang.String"/>
     </structure>
     <structure name="output"/>
     <field minOccurs="0" name="endpoint" type="java.lang.String"/>
     <field minOccurs="0" name="password" type="java.lang.String"/>
     <field minOccurs="0" name="username" type="java.lang.String"/>
     <structure collectionName="ServerLogs" definition="nabu.management.logger.types.model.logger.ServerLog" name="serverLog" namespace="nabu.management.logger.types.model.logger"/>
-    <field minOccurs="0" name="connectionId" type="java.lang.String"/>
     <field name="started" type="java.lang.Boolean"/>
 </structure>

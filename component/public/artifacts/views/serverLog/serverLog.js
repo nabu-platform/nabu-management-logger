@@ -27,7 +27,7 @@ application.views.ServerLog = Vue.extend({
 				method: "get", 
 				url: "${server.root()}api/logger/log/" + self.server + "?until=" + self.until.toISOString() + (self.toId ? "&toId=" + self.toId : ""),
 				success: function(response) {
-					var following = self.$document.body.scrollHeight - self.$document.body.scrollTop == self.$document.body.clientHeight;
+					var following = (document.documentElement.scrollHeight - document.documentElement.scrollTop) == document.documentElement.clientHeight;
 					if (response.responseText) {
 						//var following = self.$el.scrollHeight == self.$el.offsetHeight;
 						var result = JSON.parse(response.responseText);
@@ -47,7 +47,7 @@ application.views.ServerLog = Vue.extend({
 					// do the scroll with a certain delay so it has time to render...
 					if (following) {
 						setTimeout(function() {
-							self.$window.scrollTo(0, self.$document.body.scrollHeight);
+							window.scrollTo(0, document.body.scrollHeight);
 						}, 50);
 					}
 					self.timeout = setTimeout(function() {
